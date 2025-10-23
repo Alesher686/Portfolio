@@ -1,0 +1,87 @@
+.skipContainer {
+  position: fixed;
+  top: 40px;
+  right: 40px;
+  z-index: 100;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: all 0.5s ease-out;
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.skipButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  background: rgba(101, 246, 175, 0.1);
+  border: 2px solid var(--color-primary-text-100);
+  border-radius: 30px;
+  color: var(--color-primary-text-100);
+  font-family: 'Pathway Gothic One', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+
+  &:hover {
+    border-color: var(--color-accent-300);
+    color: var(--color-accent-300);
+    transform: scale(1.05);
+    box-shadow: 0 4px 20px rgba(101, 246, 175, 0.3);
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(101, 246, 175, 0.4);
+  }
+}
+
+.skipText {
+  font-size: inherit;
+}
+
+.skipIcon {
+  position: relative;
+  bottom: 1px;
+  font-size: 1em;
+  transition: transform 0.3s ease;
+}
+
+.skipButton:hover .skipIcon {
+  transform: translateX(3px);
+}
+
+@media (max-width: 768px) {
+  .skipContainer {
+    bottom: 30px;
+    right: 30px;
+  }
+
+  .skipButton {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .skipContainer {
+    bottom: 20px;
+    right: 20px;
+  }
+
+  .skipButton {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+}

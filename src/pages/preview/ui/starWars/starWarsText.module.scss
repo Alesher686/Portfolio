@@ -1,0 +1,151 @@
+.starWarsContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.starWarsWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  perspective: 400px;
+}
+
+.fade {
+  position: relative;
+  width: 100%;
+  min-height: 30vh;
+  top: -25px;
+  z-index: 1;
+}
+
+.starWars {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  height: 800px;
+  color: var(--color-primary-text-100);
+  font-family: 'Pathway Gothic One', sans-serif;
+  font-size: 500%;
+  font-weight: 600;
+  letter-spacing: 6px;
+  line-height: 150%;
+  perspective: 400px;
+  text-align: center;
+  overflow: hidden;
+
+  mask-image: #{linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(255, 255, 255, 0.1) 5%,
+    rgba(255, 255, 255, 0.5) 15%,
+    rgba(255, 255, 255, 1) 25%,
+    rgba(255, 255, 255, 1) 100%
+  )};
+  -webkit-mask-image: #{linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(255, 255, 255, 0.1) 5%,
+    rgba(255, 255, 255, 0.5) 15%,
+    rgba(255, 255, 255, 1) 25%,
+    rgba(255, 255, 255, 1) 100%
+  )};
+}
+
+.crawl {
+  position: relative;
+  top: 9999px;
+  transform-origin: 50% 100%;
+
+  &.animate {
+    animation: crawl 60s linear;
+  }
+}
+
+.title {
+  font-size: 90%;
+  text-align: center;
+  margin: 0 0 60px;
+  text-transform: uppercase;
+  color: var(--color-primary-text-100);
+
+  &:first-child {
+    font-size: 180%;
+    margin-bottom: 20px;
+  }
+}
+
+.content {
+  max-width: 1200px;
+  margin: 0 auto 20px;
+  padding: 0 20px;
+  font-size: 80%;
+  line-height: 1.4;
+  color: var(--color-secondary-text-100);
+}
+
+.encryptedChar {
+  font-size: 80%;
+  color: var(--color-accent-300);
+  animation: flicker 0.1s infinite alternate;
+  font-family: --Aurebesh, sans-serif;
+}
+
+.decryptedWordContainer {
+  display: inline-block;
+  white-space: nowrap;
+  vertical-align: baseline;
+}
+
+@keyframes flicker {
+  0% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes crawl {
+  0% {
+    top: 100vh;
+    transform: rotateX(20deg) translateZ(0);
+  }
+  100% {
+    top: -6000px;
+    transform: rotateX(25deg) translateZ(-2500px);
+  }
+}
+
+@media (max-width: 768px) {
+  .starWars {
+    font-size: 300%;
+    letter-spacing: 3px;
+  }
+
+  .title {
+    &:first-child {
+      font-size: 150%;
+    }
+  }
+
+  .content {
+    padding: 0 15px;
+    font-size: 70%;
+  }
+}
+
+@media (max-width: 480px) {
+  .starWars {
+    font-size: 200%;
+    letter-spacing: 2px;
+  }
+
+  .content {
+    font-size: 60%;
+  }
+}

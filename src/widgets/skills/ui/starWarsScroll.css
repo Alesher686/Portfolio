@@ -1,0 +1,93 @@
+.sw-wrapper {
+    display: flex;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    /* Перспектива для 3D-эффекта */
+    perspective: 450px;
+}
+
+.sw-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    /* Градиент для исчезновения верхних элементов */
+    background: linear-gradient(180deg, var(--color-background-dark-200, rgba(0, 0, 0, 0.9)) 40%, transparent 100%);
+    z-index: 2;
+    pointer-events: none;
+}
+
+.sw-wrapper::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    /* Градиент для исчезновения нижних элементов */
+    background: linear-gradient(0deg, var(--color-background-dark-200, rgba(0, 0, 0, 0.9)) 40%, transparent 100%);
+    z-index: 2;
+    pointer-events: none;
+}
+
+.sw-items-container {
+    /*color: #ffc909;*/
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    transform-origin: 50% 100%;
+    transform: translateZ(0) rotateX(20deg);
+    animation: sw-scroll 60s linear forwards;
+    padding-top: 50vh;
+}
+
+.sw-skill-item {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    line-height: 1.6;
+    margin-bottom: 50px;
+    padding: 20px 30px;
+    border: 2px solid;
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 25px rgba(67, 220, 80, 0.4);
+    transition: all 0.3s ease;
+    width: 20%;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.sw-skill-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(75, 255, 90, 0.4);
+}
+
+@keyframes sw-scroll {
+    from {
+        top: 0;
+        transform: translateZ(0) rotateX(20deg);
+    }
+    to {
+        top: -7500px;
+        transform: translateZ(-2500px) rotateX(21deg);
+    }
+}
+
+@media (max-width: 768px) {
+    .sw-items-container {
+        width: 95%;
+    }
+
+    .sw-skill-item {
+        font-size: 1.2rem;
+        padding: 15px 20px;
+        width: 90%;
+    }
+}

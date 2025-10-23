@@ -1,0 +1,62 @@
+.mainContentWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .mainContentWrapper {
+    //padding: 0 32px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .mainContentWrapper {
+    //padding: 0 64px;
+  }
+}
+
+.stackContainer {
+  position: relative;
+  top: -100px
+}
+
+.headerContentWrapper {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  position: relative;
+  padding: 32px 0;
+  min-height: 84vh;
+  background-color: var(--color-background-dark-200);
+}
+
+.mainContentWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.endorParallax {
+  position: relative;
+  z-index: 1;
+}
+
+.contentAfterParallax {
+  position: relative;
+  z-index: 1000;
+  background: var(--color-background-dark-200);
+}
+
+@media (max-width: 768px) {
+  .contentAfterParallax {
+    padding: 2rem 1rem;
+
+    h2 {
+      font-size: clamp(1.5rem, 6vw, 3rem);
+    }
+
+    p {
+      font-size: 1rem;
+    }
+  }
+}

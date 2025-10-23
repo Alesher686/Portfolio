@@ -1,0 +1,83 @@
+export const endorParallaxLayers = [
+  {
+    id: '0',
+    imageUrl: '/images/endor11.png',
+    speed: 0.3,
+    zIndex: 5,
+  },
+  {
+    id: '1',
+    imageUrl: '/images/endor10.png',
+    speed: 0.2,
+    zIndex: 10,
+  },
+  {
+    id: '2',
+    imageUrl: '/images/endor9.png',
+    speed: 0.2,
+    zIndex: 15,
+  },
+  {
+    id: '3',
+    imageUrl: '/images/endor8.png',
+    speed: 0.2,
+    zIndex: 20,
+    topOffset: 25,
+  },
+  {
+    id: '4',
+    imageUrl: '/images/endor7.png',
+    speed: 0.2,
+    zIndex: 20,
+    topOffset: 90,
+  },
+  {
+    id: '5',
+    imageUrl: '/images/endor6.png',
+    speed: 0.2,
+    zIndex: 20,
+    topOffset: 30,
+  },
+  {
+    id: '6',
+    imageUrl: '/images/endor5.png',
+    speed: 0.2,
+    zIndex: 25,
+    topOffset: 55,
+  },
+  {
+    id: '7',
+    imageUrl: '/images/endor4.png',
+    speed: 0.3,
+    zIndex: 30,
+    topOffset: 110,
+  },
+
+  {
+    id: '8',
+    imageUrl: '/images/endor3.png',
+    speed: 0.3,
+    zIndex: 35,
+    topOffset: 105,
+  },
+  {
+    id: '9',
+    imageUrl: '/images/endor2.png',
+    speed: 0.98,
+    zIndex: 35,
+    topOffset: 105,
+  },
+  {
+    id: '10',
+    imageUrl: '/images/endor1.png',
+    speed: 1.0,
+    zIndex: 35,
+    topOffset: 110,
+  },
+  {
+    id: 'top',
+    imageUrl: '/images/endor-top.png',
+    speed: 1.0,
+    zIndex: 30,
+  },
+];

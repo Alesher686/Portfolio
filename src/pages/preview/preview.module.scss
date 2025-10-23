@@ -1,0 +1,33 @@
+.previewWrapper {
+  color: var(--color-primary-text-100);
+  letter-spacing: 0.07em;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.previewContent {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+@keyframes fadeOutAnimation {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.starWarsText {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}

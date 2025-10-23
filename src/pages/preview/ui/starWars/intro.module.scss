@@ -1,0 +1,42 @@
+.introContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.introText {
+  font-family: 'Pathway Gothic One', sans-serif;
+  font-size: clamp(1.5rem, 4vw, 3rem);
+  color: var(--color-primary-text-100);
+  text-align: center;
+  letter-spacing: 0.1em;
+  opacity: 0;
+  transition: all 1s ease-in-out;
+  max-width: 90%;
+  line-height: 1.4;
+
+  &.visible {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .introText {
+    font-size: clamp(1.2rem, 5vw, 2.5rem);
+    letter-spacing: 0.05em;
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .introText {
+    font-size: clamp(1rem, 6vw, 2rem);
+    padding: 0 15px;
+  }
+}

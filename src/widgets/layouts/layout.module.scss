@@ -1,0 +1,45 @@
+.layoutWrapper {
+  color: var(--color-primary-text-100);
+  font-size: 32px;
+  letter-spacing: 0.07em;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  max-width: 100vw;
+  overflow-x: hidden;
+  background-color: var(--color-background-dark-200);
+}
+
+.navLink {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-white);
+  font-size: 16px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    color: var(--color-accent-300);
+  }
+}
+
+.activeNavLink {
+  color: var(--color-accent-300);
+  transform: scale(1.1);
+}
+
+.navIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+}

@@ -1,0 +1,139 @@
+// Основные переменные
+$border-radius: 4px;
+$gap: 10px;
+$padding-inline: 28px;
+$padding-vertical: 6px;
+
+// Цветовые переменные
+$color-accent-300: var(--color-accent-300);
+$color-background-dark: var(--color-background-dark-100);
+
+// Универсальный миксин для цветов, границ и теней кнопки
+@mixin buttonStyles($color, $background-color, $border, $shadow: none) {
+  color: $color;
+  background-color: $background-color;
+  border: $border;
+  border-radius: $border-radius;
+  //box-shadow: $shadow;
+}
+
+// Универсальный миксин для состояния кнопки
+@mixin buttonState($background, $border, $color: inherit) {
+  background-color: $background;
+  border: $border;
+  color: $color;
+}
+
+// Стили кнопок
+.button {
+  all: unset;
+  cursor: pointer;
+  gap: $gap;
+  padding: $padding-vertical $padding-inline;
+}
+
+.primary {
+  @include buttonStyles($color-accent-300, $color-background-dark, 2px solid $color-accent-300, 0 4px 18px 0);
+
+  &:hover {
+    @include buttonState($color-accent-300, 2px solid $color-accent-300);
+  }
+
+  &:focus-visible {
+    @include buttonState($color-accent-300, 2px solid $color-accent-300);
+  }
+
+  &:active {
+    @include buttonState($color-accent-300, 2px solid $color-accent-300);
+  }
+
+  &:disabled {
+    @include buttonState($color-accent-300, $color-accent-300, $color-accent-300);
+  }
+}
+
+.secondary {
+  @include buttonStyles($color-accent-300, $color-accent-300, 2px solid $color-accent-300, 0 4px 4px 0 #4d566021);
+
+  &:hover {
+    @include buttonState($color-accent-300, 2px solid $color-accent-300);
+  }
+
+  &:focus-visible {
+    @include buttonState($color-accent-300, 2px solid $color-accent-300);
+  }
+
+  &:active {
+    @include buttonState(#333, 2px solid $color-accent-300);
+  }
+
+  &:disabled {
+    @include buttonState($color-accent-300, $color-accent-300, $color-accent-300);
+  }
+}
+
+.tertiary {
+  @include buttonStyles($color-accent-300, rgba(255, 255, 255, 0), 1px solid $color-accent-300);
+
+  &:hover {
+    @include buttonState(#333, 1px solid $color-accent-300);
+  }
+
+  &:focus-visible {
+    @include buttonState(rgba(10, 102, 56, 0), 1px solid $color-accent-300);
+  }
+
+  &:active {
+    @include buttonState($color-accent-300, 1px solid $color-accent-300);
+  }
+
+  &:disabled {
+    color: $color-accent-300;
+    background-color: rgba(10, 102, 56, 0);
+    border: 1px solid $color-accent-300;
+    box-shadow: none;
+  }
+}
+
+.link {
+  @include buttonStyles($color-accent-300, rgba(255, 255, 255, 0), 2px solid transparent);
+
+  padding: 6px 12px;
+
+  &:hover {
+    color: $color-accent-300;
+  }
+
+  &:active {
+    color: $color-accent-300;
+    background-color: rgba(10, 102, 56, 0);
+  }
+
+  &:focus-visible {
+    color: $color-accent-300;
+    border: 2px solid $color-accent-300;
+    border-radius: 50px;
+  }
+
+  &:disabled {
+    color: $color-accent-300;
+  }
+}
+
+.fullWidth {
+  width: 80%;
+  text-align: center;
+}
+
+.asLink {
+  cursor: pointer;
+  display: inline-block;
+}
+
+.valueBox {
+  display: flex;
+  gap: $gap;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
