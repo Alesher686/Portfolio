@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import TestCard from '@/shared/ui/card/test.tsx';
-import image from '@/shared/assets/img/darkswordman.png';
+// import TestCard from '@/shared/ui/card/test.tsx';
+// import image from '@/shared/assets/img/darkswordman.png';
 import s from './contactForm.module.scss';
 
 interface ContactFormData {
