@@ -32,6 +32,7 @@ const Main = () => {
       />
       <div className={s.contentAfterParallax}>
         <LapTopGame />
+        dfgdfgdfgdfg
         <GlitchBlock />
         <Experience />
         <GlitchBlock />
