@@ -1,0 +1,16 @@
+# Системное
+dist
+.dockerignore
+Dockerfile
+docker-compose.yml
+Makefile
+docker/
+README.md
+
+# Конфиги и окружение
+.env*
+
+# IDE
+.vscode/
+.idea/
+*.swp
