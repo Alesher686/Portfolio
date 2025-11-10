@@ -1,15 +1,15 @@
 import { useEffect, useState, useMemo, useRef } from 'react';
 
-import { ParticlesBackground } from '@/shared/ui/particles/ParticlesBackground.tsx';
+import StarWarsIntro from '@/pages/preview/ui/starWars/StarWarsIntro.tsx';
+import StarWarsText from '@/pages/preview/ui/starWars/StarWarsText.tsx';
+import type { IStarWarsTextRef } from '@/pages/preview/ui/starWars/StarWarsText.tsx';
 import { useNavigation } from '@/shared/contexts/navigationContext.tsx';
+import SkipButton from '@/shared/ui/buttons/SkipButton.tsx';
+import { ParticlesBackground } from '@/shared/ui/particles/ParticlesBackground.tsx';
 import { FadeOutComponent } from '@/shared/ui/transitors/FadeOutComponent.tsx';
 import { useNavigate } from 'react-router-dom';
 
-import StarWarsIntro from '@/pages/preview/ui/starWars/StarWarsIntro.tsx';
-import SkipButton from '@/shared/ui/buttons/SkipButton.tsx';
-
 import s from './preview.module.scss';
-import StarWarsText, { StarWarsTextRef } from '@/pages/preview/ui/starWars/StarWarsText.tsx';
 
 const Preview = () => {
   const [showIntro, setShowIntro] = useState(true);
@@ -18,7 +18,7 @@ const Preview = () => {
   const [isTransitioning, setIsTransitioning] = useState(false);
   const { setNavigateWithAnimation } = useNavigation();
   const navigate = useNavigate();
-  const starWarsTextRef = useRef<StarWarsTextRef>(null);
+  const starWarsTextRef = useRef<IStarWarsTextRef>(null);
 
   const particlesBackground = useMemo(() => <ParticlesBackground />, []);
 

@@ -1,11 +1,12 @@
 import LetterGlitch from '@/widgets/letterGlitch/LetterGlitch.tsx';
-import s from './description.module.scss';
+
+import s from './glitchBlock.module.scss';
 
 interface IProps {
   color?: 'red' | 'green';
 }
 
-export const Description = ({ color = 'green' }: IProps) => {
+export const GlitchBlock = ({ color = 'green' }: IProps) => {
   const palette =
     color === 'red' ? ['#e0807e', '#a85c5b', '#643938'] : ['#38b265', '#1d6236', '#113a21'];
 

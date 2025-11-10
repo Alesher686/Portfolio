@@ -1,5 +1,5 @@
-import { ParticlesBackground } from '@/shared/ui/particles/ParticlesBackground.tsx';
 import notFound from '@/shared/assets/img/404.svg';
+import { ParticlesBackground } from '@/shared/ui/particles/ParticlesBackground.tsx';
 
 import s from './pagenotFound.module.scss';
 

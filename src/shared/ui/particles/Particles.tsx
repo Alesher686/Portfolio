@@ -1,9 +1,10 @@
 import React, { useEffect, useRef } from 'react';
+
 import { Renderer, Camera, Geometry, Program, Mesh } from 'ogl';
 
 import './particles.css';
 
-interface ParticlesProps {
+interface IParticlesProps {
   particleCount?: number;
   particleSpread?: number;
   speed?: number;
@@ -94,7 +95,7 @@ const fragment = /* glsl */ `
   }
 `;
 
-const Particles: React.FC<ParticlesProps> = ({
+const Particles: React.FC<IParticlesProps> = ({
   particleCount = 200,
   particleSpread = 10,
   speed = 0.1,

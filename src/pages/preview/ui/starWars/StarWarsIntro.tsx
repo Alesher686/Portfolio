@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+
 import s from './intro.module.scss';
 
 interface IProps {

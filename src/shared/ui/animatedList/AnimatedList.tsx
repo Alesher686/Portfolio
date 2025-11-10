@@ -1,8 +1,9 @@
 import React, { useRef, useState, useEffect, ReactNode, MouseEventHandler, UIEvent } from 'react';
+
 import { motion, useInView } from 'framer-motion';
 import './animatedList.css';
 
-interface AnimatedItemProps {
+interface IAnimatedItemProps {
   children: ReactNode;
   delay?: number;
   index: number;
@@ -10,7 +11,7 @@ interface AnimatedItemProps {
   onClick?: MouseEventHandler<HTMLDivElement>;
 }
 
-const AnimatedItem: React.FC<AnimatedItemProps> = ({
+const AnimatedItem: React.FC<IAnimatedItemProps> = ({
   children,
   delay = 0,
   index,
@@ -35,7 +36,7 @@ const AnimatedItem: React.FC<AnimatedItemProps> = ({
   );
 };
 
-interface AnimatedListProps {
+interface IAnimatedListProps {
   items?: string[];
   onItemSelect?: (item: string, index: number) => void;
   showGradients?: boolean;
@@ -46,7 +47,7 @@ interface AnimatedListProps {
   initialSelectedIndex?: number;
 }
 
-const AnimatedList: React.FC<AnimatedListProps> = ({
+const AnimatedList: React.FC<IAnimatedListProps> = ({
   items = [
     'Item 1',
     'Item 2',

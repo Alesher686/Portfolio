@@ -1,12 +1,12 @@
 import React, { useRef } from 'react';
 import './spotlightCard.css';
 
-interface SpotlightCardProps extends React.PropsWithChildren {
+interface ISpotlightCardProps extends React.PropsWithChildren {
   className?: string;
   spotlightColor?: `rgba(${number}, ${number}, ${number}, ${number})`;
 }
 
-const SpotlightCard: React.FC<SpotlightCardProps> = ({
+const SpotlightCard: React.FC<ISpotlightCardProps> = ({
   children,
   className = '',
   spotlightColor = 'rgba(255, 255, 255, 0.25)',

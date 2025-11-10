@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
+
 import { motion } from 'framer-motion';
-// import TestCard from '@/shared/ui/card/test.tsx';
-// import image from '@/shared/assets/img/darkswordman.png';
+
 import s from './contactForm.module.scss';
 
-interface ContactFormData {
+interface IContactFormData {
   name: string;
   email: string;
   subject: string;
@@ -12,7 +12,7 @@ interface ContactFormData {
 }
 
 export const ContactForm = () => {
-  const [formData, setFormData] = useState<ContactFormData>({
+  const [formData, setFormData] = useState<IContactFormData>({
     name: '',
     email: '',
     subject: '',
@@ -49,13 +49,6 @@ export const ContactForm = () => {
   return (
     <section className={s.contactSection}>
       <div className={s.container}>
-        {/*<motion.div*/}
-        {/*  className={s.header}*/}
-        {/*  initial={{ opacity: 0, y: -20 }}*/}
-        {/*  animate={{ opacity: 1, y: 0 }}*/}
-        {/*  transition={{ duration: 0.6 }}*/}
-        {/*></motion.div>*/}
-
         <div className={s.content}>
           <motion.div
             className={s.formWrapper}

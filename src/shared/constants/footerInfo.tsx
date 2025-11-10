@@ -1,4 +1,4 @@
-export const quickLinks = [
+export const QUICK_LINKS = [
   { name: 'Главная', href: '#home' },
   { name: 'О себе', href: '#about' },
   { name: 'Навыки', href: '#skills' },
@@ -6,7 +6,7 @@ export const quickLinks = [
   { name: 'Контакты', href: '#contacts' },
 ];
 
-export const skills = [
+export const SKILLS = [
   'React',
   'TypeScript',
   'Node.js',
@@ -20,7 +20,7 @@ export const skills = [
   'Vite',
 ];
 
-export const socialLinks = [
+export const SOCIAL_LINKS = [
   {
     name: 'GitHub',
     url: 'https://github.com/yourusername',

@@ -1,10 +1,10 @@
+import CollapsibleDock from '@/shared/ui/dock/CollapsibleDock.tsx';
+import Footer from '@/widgets/footer/Footer.tsx';
 import HeaderLayout from '@/widgets/layouts/HeaderLayout.tsx';
 import { Outlet } from 'react-router-dom';
 
 import s from './layout.module.scss';
 
-import CollapsibleDock from '@/shared/ui/dock/CollapsibleDock.tsx';
-import Footer from '@/widgets/footer/Footer.tsx';
 
 export type DockItemData = {
   icon: React.ReactNode;

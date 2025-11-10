@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
+
 import s from './parallaxBlock.module.scss';
 
-interface ParallaxLayerData {
+interface IParallaxLayerData {
   id: string;
   imageUrl: string;
   speed: number;
@@ -10,7 +11,7 @@ interface ParallaxLayerData {
 }
 
 interface IProps {
-  layers: ParallaxLayerData[];
+  layers: IParallaxLayerData[];
   maxScroll?: number;
   height?: string;
   className?: string;

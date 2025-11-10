@@ -1,4 +1,4 @@
-export const endorParallaxLayers = [
+export const PARALLAX_LAYERS = [
   {
     id: '0',
     imageUrl: '/images/endor11.png',

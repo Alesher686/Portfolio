@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+
 import s from './skipButton.module.scss';
 
 interface IProps {

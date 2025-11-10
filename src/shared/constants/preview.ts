@@ -1,3 +1,0 @@
-export const CONSOLE_TEXT = `<System initialization.../>\n<Loading data.../>\n<Gathering data... all metrics will be pulled in soon.../>\n<Working on project layout... sketching blueprints.../>\n<Optimizing code.../>\n<Setting up magic... just for effect!/>\n<Connecting to server.../>\n<Stability check... if nothing crashed — the magic is working!/>\n<Preparing for launch.../>\n<Project is active!/>\n`
-
-export const DELAY = 1000

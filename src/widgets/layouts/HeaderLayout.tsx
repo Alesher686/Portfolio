@@ -1,5 +1,7 @@
 import { useEffect, useRef } from 'react';
+
 import logo from '@/shared/assets/img/logo_sw.png';
+
 import s from './headerLayout.module.scss';
 
 const HeaderLayout = () => {

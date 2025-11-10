@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+
+import { Dock } from '@/shared/ui/dock/Dock.tsx';
 import { motion, AnimatePresence } from 'framer-motion';
-import Dock from '@/shared/ui/dock/Dock.tsx';
+
 import s from './collapsibleDock.module.scss';
 
-interface CollapsibleDockProps {
+interface ICollapsibleDockProps {
   items: Array<{
     icon: React.ReactNode;
     label: React.ReactNode;
@@ -25,7 +27,7 @@ interface CollapsibleDockProps {
   openOnClick?: boolean;
 }
 
-const CollapsibleDock: React.FC<CollapsibleDockProps> = ({
+const CollapsibleDock: React.FC<ICollapsibleDockProps> = ({
   items,
   toggleIcon = '⋮',
   position = { bottom: 0, right: 20 },

@@ -1,6 +1,6 @@
-import TiltedCard from '@/shared/ui/card/Card.tsx';
-import { FlexContainer } from '@/shared/ui/flexContainer/FlexContainer.tsx';
 import image from '@/shared/assets/img/cosmo.png';
+import { TiltedCard } from '@/shared/ui/card/Card.tsx';
+import { FlexContainer } from '@/shared/ui/flexContainer/FlexContainer.tsx';
 
 import s from './cards.module.scss';
 

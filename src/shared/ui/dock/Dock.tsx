@@ -1,3 +1,5 @@
+import React, { Children, cloneElement, useEffect, useMemo, useRef, useState } from 'react';
+
 import {
   motion,
   MotionValue,
@@ -7,7 +9,6 @@ import {
   type SpringOptions,
   AnimatePresence,
 } from 'framer-motion';
-import React, { Children, cloneElement, useEffect, useMemo, useRef, useState } from 'react';
 import { Link } from 'react-scroll';
 
 import './dock.css';
@@ -49,7 +50,7 @@ type DockItemProps = {
   magnification: number;
 };
 
-function DockItem({
+const DockItem = ({
   children,
   className = '',
   onClick,
@@ -62,7 +63,7 @@ function DockItem({
   distance,
   magnification,
   baseItemSize,
-}: DockItemProps) {
+}: DockItemProps) => {
   const ref = useRef<HTMLDivElement>(null);
   const isHovered = useMotionValue(0);
 
@@ -117,14 +118,14 @@ function DockItem({
     );
   }
   return itemContent;
-}
+};
 
 type DockLabelProps = {
   className?: string;
   children: React.ReactNode;
 };
 
-function DockLabel({ children, className = '', ...rest }: DockLabelProps) {
+const DockLabel = ({ children, className = '', ...rest }: DockLabelProps) => {
   const { isHovered } = rest as { isHovered: MotionValue<number> };
   const [isVisible, setIsVisible] = useState(false);
 
@@ -152,18 +153,18 @@ function DockLabel({ children, className = '', ...rest }: DockLabelProps) {
       )}
     </AnimatePresence>
   );
-}
+};
 
 type DockIconProps = {
   className?: string;
   children: React.ReactNode;
 };
 
-function DockIcon({ children, className = '' }: DockIconProps) {
+const DockIcon = ({ children, className = '' }: DockIconProps) => {
   return <div className={`dock-icon ${className}`}>{children}</div>;
-}
+};
 
-export default function Dock({
+export const Dock = ({
   items,
   className = '',
   spring = { mass: 0.1, stiffness: 150, damping: 12 },
@@ -172,7 +173,7 @@ export default function Dock({
   panelHeight = 68,
   dockHeight = 256,
   baseItemSize = 50,
-}: DockProps) {
+}: DockProps) => {
   const mouseX = useMotionValue(Infinity);
   const isHovered = useMotionValue(0);
 
@@ -221,4 +222,4 @@ export default function Dock({
       </motion.div>
     </motion.div>
   );
-}
+};

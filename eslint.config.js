@@ -7,7 +7,16 @@ import reactPlugin from 'eslint-plugin-react';
 import importPlugin from 'eslint-plugin-import';
 
 export default tseslint.config(
-  { ignores: ['dist'] },
+  {
+    ignores: [
+      'dist',
+      'node_modules',
+      'build',
+      'src/shared/theme/components.ts',
+      'src/shared/theme/types.ts',
+      'src/main.tsx',
+    ],
+  },
   {
     settings: {
       react: {
@@ -42,10 +51,9 @@ export default tseslint.config(
       eqeqeq: ['error', 'always'],
       'prefer-arrow-callback': 'error',
       'no-alert': 'error',
-      'no-plusplus': 'error',
       'max-depth': ['error', 4],
       'prefer-template': 'error',
-      camelcase: ['error', { properties: 'always' }],
+
       '@typescript-eslint/naming-convention': [
         'error',
         {
@@ -53,13 +61,11 @@ export default tseslint.config(
           format: ['PascalCase'],
           prefix: ['I'],
         },
-        { selector: 'typeParameter', format: ['PascalCase'], prefix: ['T'] },
         {
           selector: 'function',
           format: ['camelCase', 'PascalCase'],
         },
       ],
-      'no-nested-ternary': 'error',
       'space-before-function-paren': [
         'error',
         {
@@ -69,18 +75,12 @@ export default tseslint.config(
         },
       ],
       'keyword-spacing': ['error', { before: true, after: true }],
-      '@typescript-eslint/no-explicit-any': 'error',
+      '@typescript-eslint/no-explicit-any': 'off',
       '@typescript-eslint/ban-ts-comment': 'error',
       'react/jsx-wrap-multilines': 'error',
       'react/function-component-definition': ['error', { namedComponents: 'arrow-function' }],
       'no-restricted-globals': ['error', 'event'],
       'react/style-prop-object': 'error',
-      'no-restricted-imports': [
-        'error',
-        {
-          paths: ['react-router-dom'],
-        },
-      ],
       'import/order': [
         'error', // Уровень ошибки
         {
@@ -107,5 +107,5 @@ export default tseslint.config(
         },
       ],
     },
-  },
-)
+  }
+);

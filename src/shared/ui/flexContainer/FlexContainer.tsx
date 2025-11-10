@@ -1,8 +1,10 @@
-import s from './flexContainer.module.scss';
 import { ReactNode } from 'react';
+
 import clsx from 'clsx';
 
-interface FlexContainerProps {
+import s from './flexContainer.module.scss';
+
+interface IFlexContainerProps {
   children: ReactNode;
   direction?: 'row' | 'column';
   alignment?: 'centered' | 'spaceBetween' | 'default';
@@ -14,7 +16,7 @@ export const FlexContainer = ({
   direction = 'column',
   alignment = 'default',
   className,
-}: FlexContainerProps) => {
+}: IFlexContainerProps) => {
   return (
     <div
       className={clsx(

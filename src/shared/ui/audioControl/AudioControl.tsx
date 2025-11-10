@@ -1,5 +1,7 @@
 import { useEffect, useState, forwardRef, useImperativeHandle } from 'react';
+
 import { useAudio } from '@/shared/lib/useAudio.ts';
+
 import s from './audioControl.module.scss';
 
 interface IProps {
@@ -7,11 +9,11 @@ interface IProps {
   audioSrc: string;
 }
 
-export interface AudioControlRef {
+export interface IAudioControlRef {
   fadeOutAndStop: (duration?: number) => Promise<void>;
 }
 
-const AudioControl = forwardRef<AudioControlRef, IProps>(({ isVisible, audioSrc }, ref) => {
+const AudioControl = forwardRef<IAudioControlRef, IProps>(({ isVisible, audioSrc }, ref) => {
   const [showButton, setShowButton] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
 

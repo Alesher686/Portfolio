@@ -1,12 +1,12 @@
 import { useEffect, useRef, useState, useCallback } from 'react';
 
-interface UseAudioOptions {
+interface IUseAudioOptions {
   autoPlay?: boolean;
   loop?: boolean;
   volume?: number;
 }
 
-export const useAudio = (src: string, options: UseAudioOptions = {}) => {
+export const useAudio = (src: string, options: IUseAudioOptions = {}) => {
   const { autoPlay = false, loop = false, volume = 1 } = options;
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -216,7 +216,7 @@ export const useAudio = (src: string, options: UseAudioOptions = {}) => {
       console.log('✅ AutoPlay is supported');
       return true;
     } catch (e) {
-      console.log('🚫 AutoPlay not supported, will require user interaction');
+      console.log('🚫 AutoPlay not supported, will require user interaction', e);
       setCanAutoPlay(false);
       return false;
     }
@@ -294,7 +294,7 @@ export const useAudio = (src: string, options: UseAudioOptions = {}) => {
           await audio.play();
           console.log('🎉 Autoplay successful');
         } catch (e) {
-          console.log('🚫 Autoplay blocked, waiting for user interaction');
+          console.log('🚫 Autoplay blocked, waiting for user interaction', e);
         }
       }
     };

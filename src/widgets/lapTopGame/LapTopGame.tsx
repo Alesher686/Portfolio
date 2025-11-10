@@ -1,11 +1,13 @@
-import LaptopCanvas from '@/shared/ui/canvas/Laptop.tsx';
-import DecryptedText from '@/shared/ui/decryptedText/DecryptedText.tsx';
-import Particles from '@/shared/ui/particles/Particles.tsx';
-import { FlexContainer } from '@/shared/ui/flexContainer/FlexContainer.tsx';
 import { useEffect, useRef, useState } from 'react';
-import s from './firstTitle.module.scss';
 
-export const FirstTitle = () => {
+import LaptopCanvas from '@/shared/ui/canvas/Laptop.tsx';
+import { DecryptedText } from '@/shared/ui/decryptedText/DecryptedText.tsx';
+import { FlexContainer } from '@/shared/ui/flexContainer/FlexContainer.tsx';
+import Particles from '@/shared/ui/particles/Particles.tsx';
+
+import s from './lapTopGame.module.scss';
+
+export const LapTopGame = () => {
   const [shouldLoadLaptop, setShouldLoadLaptop] = useState(false);
   const laptopContainerRef = useRef<HTMLDivElement>(null);
 

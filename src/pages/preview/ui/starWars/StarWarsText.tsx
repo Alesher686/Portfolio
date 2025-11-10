@@ -1,6 +1,8 @@
 import { useEffect, useState, useMemo, useRef, useImperativeHandle, forwardRef } from 'react';
-import DecryptedText from '@/shared/ui/decryptedText/DecryptedText.tsx';
+
 import AudioControl from '@/shared/ui/audioControl/AudioControl.tsx';
+import { DecryptedText } from '@/shared/ui/decryptedText/DecryptedText.tsx';
+
 import s from './starWarsText.module.scss';
 
 interface IProps {
@@ -8,19 +10,19 @@ interface IProps {
   setIsVisible: (visible: boolean) => void;
 }
 
-export interface StarWarsTextRef {
+export interface IStarWarsTextRef {
   handleSkip: () => Promise<void>;
 }
 
-export interface AudioControlRef {
+export interface IAudioControlRef {
   fadeOutAndStop: (duration?: number) => Promise<void>;
 }
 
-const StarWarsText = forwardRef<StarWarsTextRef, IProps>(({ isVisible, setIsVisible }, ref) => {
+const StarWarsText = forwardRef<IStarWarsTextRef, IProps>(({ isVisible, setIsVisible }, ref) => {
   const [shouldAnimate, setShouldAnimate] = useState(false);
   const [decryptionQueue, setDecryptionQueue] = useState<number[]>([]);
   const [activeDecryptions, setActiveDecryptions] = useState<Set<number>>(new Set());
-  const audioControlRef = useRef<AudioControlRef>(null);
+  const audioControlRef = useRef<IAudioControlRef>(null);
 
   const audioSrc = '/audio/star-wars-theme.mp3';
 
@@ -251,7 +253,6 @@ ultimate victory...
           </section>
         </div>
       </div>
-
       <AudioControl ref={audioControlRef} isVisible={isVisible} audioSrc={audioSrc} />
     </>
   );

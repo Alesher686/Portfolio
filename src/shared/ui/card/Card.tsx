@@ -1,21 +1,23 @@
-import type { SpringOptions } from 'framer-motion';
 import { useRef, useState } from 'react';
+import type { ComponentProps, CSSProperties, ReactNode } from 'react';
+
+import type { SpringOptions } from 'framer-motion';
 import { motion, useMotionValue, useSpring } from 'framer-motion';
 import './titleCard.css';
 
-interface TiltedCardProps {
-  imageSrc: React.ComponentProps<'img'>['src'];
+interface ITiltedCardProps {
+  imageSrc: ComponentProps<'img'>['src'];
   altText?: string;
   captionText?: string;
-  containerHeight?: React.CSSProperties['height'];
-  containerWidth?: React.CSSProperties['width'];
-  imageHeight?: React.CSSProperties['height'];
-  imageWidth?: React.CSSProperties['width'];
+  containerHeight?: CSSProperties['height'];
+  containerWidth?: CSSProperties['width'];
+  imageHeight?: CSSProperties['height'];
+  imageWidth?: CSSProperties['width'];
   scaleOnHover?: number;
   rotateAmplitude?: number;
   showMobileWarning?: boolean;
   showTooltip?: boolean;
-  overlayContent?: React.ReactNode;
+  overlayContent?: ReactNode;
   displayOverlayContent?: boolean;
 }
 
@@ -25,7 +27,7 @@ const springValues: SpringOptions = {
   mass: 2,
 };
 
-export default function TiltedCard({
+export const TiltedCard = ({
   imageSrc,
   altText = 'Tilted card image',
   captionText = '',
@@ -39,7 +41,7 @@ export default function TiltedCard({
   showTooltip = true,
   overlayContent = null,
   displayOverlayContent = false,
-}: TiltedCardProps) {
+}: ITiltedCardProps) => {
   const ref = useRef<HTMLElement>(null);
 
   const x = useMotionValue(0);
@@ -148,4 +150,4 @@ export default function TiltedCard({
       )}
     </figure>
   );
-}
+};

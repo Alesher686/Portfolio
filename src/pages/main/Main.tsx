@@ -1,15 +1,16 @@
 import { useLayoutEffect, useState } from 'react';
 
-import { FirstTitle } from '@/widgets/firstTitle/FirstTitle.tsx';
+import { PARALLAX_LAYERS } from '@/shared/constants/parallaxLayers.ts';
 import { useNavigation } from '@/shared/contexts/navigationContext.tsx';
 import { FadeInComponent } from '@/shared/ui/transitors/FadeInComponent.tsx';
-import { Introduction } from '@/widgets/introduction/Introduction.tsx';
-import { Description } from '@/widgets/description/Description.tsx';
-import { Experience } from '@/widgets/experience/Experience.tsx';
-import ParallaxBlock from '@/widgets/parallaxBlock/ParallaxBlock.tsx';
-import { endorParallaxLayers } from '@/shared/constants/endorParallaxLayers.ts';
-import s from './main.module.scss';
 import { ContactForm } from '@/widgets/contactForm/ContactForm.tsx';
+import { Experience } from '@/widgets/experience/Experience.tsx';
+import { GlitchBlock } from '@/widgets/glitchBlock/GlitchBlock.tsx';
+import { LapTopGame } from '@/widgets/lapTopGame/LapTopGame.tsx';
+import ParallaxBlock from '@/widgets/parallaxBlock/ParallaxBlock.tsx';
+import { SkillsContainer } from '@/widgets/skillsContainer/SkillsContainer.tsx';
+
+import s from './main.module.scss';
 
 const Main = () => {
   const [isRevealing, setIsRevealing] = useState(false);
@@ -24,18 +25,18 @@ const Main = () => {
   return (
     <div className={s.mainContentWrapper}>
       <ParallaxBlock
-        layers={endorParallaxLayers}
+        layers={PARALLAX_LAYERS}
         maxScroll={1400}
         height="95vh"
         className={s.endorParallax}
       />
       <div className={s.contentAfterParallax}>
-        <FirstTitle />
-        <Description />
+        <LapTopGame />
+        <GlitchBlock />
         <Experience />
-        <Description />
-        <Introduction />
-        <Description color={'red'} />
+        <GlitchBlock />
+        <SkillsContainer />
+        <GlitchBlock color={'red'} />
         <ContactForm />
         {isRevealing && <FadeInComponent />}
       </div>

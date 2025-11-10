@@ -1,9 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
-import s from './experience.module.scss';
-import SpotlightCard from '@/shared/ui/spotlightCard/SpotlightCard.tsx';
 
-interface ExperienceItem {
+import SpotlightCard from '@/shared/ui/spotlightCard/SpotlightCard.tsx';
+import { motion, useScroll, useTransform } from 'framer-motion';
+
+import s from './experience.module.scss';
+
+interface IExperienceItem {
   id: number;
   title: string;
   date: string;
@@ -13,7 +15,7 @@ interface ExperienceItem {
   icon?: string;
 }
 
-const experienceData: ExperienceItem[] = [
+const experienceData: IExperienceItem[] = [
   {
     id: 1,
     title: 'Frontend Разработчик',
@@ -58,7 +60,7 @@ const useVisibilityControl = (defaultValue = false) => {
   };
 };
 
-const ExperienceItem = ({ item, isLeft }: { item: ExperienceItem; isLeft: boolean }) => {
+const ExperienceItem = ({ item, isLeft }: { item: IExperienceItem; isLeft: boolean }) => {
   const itemRef = useRef(null);
   const visibility = useVisibilityControl(false);
 
@@ -158,6 +160,7 @@ export const Experience = () => {
   });
 
   const timelineHeight = useTransform(scrollYProgress, [0, 0.2, 0.85], ['0%', '0%', '100%']);
+  const currentProgress = useTransform(scrollYProgress, [0.25, 0.85], [0, 1]);
 
   return (
     <section id={'experience'}>
@@ -172,8 +175,6 @@ export const Experience = () => {
 
           <div className={s.timelineItems}>
             {experienceData.map((item, index) => {
-              const currentProgress = useTransform(scrollYProgress, [0.25, 0.85], [0, 1]);
-
               return (
                 <div key={item.id} className={s.timelineItem}>
                   <motion.div>

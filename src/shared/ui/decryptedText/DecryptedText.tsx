@@ -1,4 +1,5 @@
 import { useEffect, useState, useRef } from 'react';
+
 import { motion, HTMLMotionProps } from 'framer-motion';
 
 const styles = {
@@ -7,7 +8,7 @@ const styles = {
     whiteSpace: 'pre-wrap',
   },
   srOnly: {
-    position: 'absolute' as 'absolute',
+    position: 'absolute' as const,
     width: '1px',
     height: '1px',
     padding: 0,
@@ -32,7 +33,7 @@ interface IProps extends HTMLMotionProps<'span'> {
   animateOn?: 'view' | 'hover';
 }
 
-export default function DecryptedText({
+export const DecryptedText = ({
   text,
   speed = 50,
   maxIterations = 10,
@@ -45,7 +46,7 @@ export default function DecryptedText({
   encryptedClassName = '',
   animateOn = 'hover',
   ...props
-}: IProps) {
+}: IProps) => {
   const [displayText, setDisplayText] = useState<string>(text);
   const [isHovering, setIsHovering] = useState<boolean>(false);
   const [isScrambling, setIsScrambling] = useState<boolean>(false);
@@ -235,4 +236,4 @@ export default function DecryptedText({
       </span>
     </motion.span>
   );
-}
+};

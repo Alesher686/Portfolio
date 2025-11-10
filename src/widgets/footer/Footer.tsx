@@ -1,5 +1,7 @@
 import { useState } from 'react';
-import { quickLinks, skills, socialLinks } from '@/shared/constants/footerInfo.tsx';
+
+import { QUICK_LINKS, SKILLS, SOCIAL_LINKS } from '@/shared/constants/footerInfo.tsx';
+
 import s from './footer.module.scss';
 
 const Footer = () => {
@@ -16,7 +18,7 @@ const Footer = () => {
               использованием React, TypeScript и Node.js
             </p>
             <div className={s.socialLinks}>
-              {socialLinks.map((link) => (
+              {SOCIAL_LINKS.map((link) => (
                 <a
                   key={link.name}
                   href={link.url}
@@ -33,7 +35,7 @@ const Footer = () => {
           <div className={s.footerSection}>
             <h3 className={s.sectionTitle}>Навигация</h3>
             <ul className={s.quickLinks}>
-              {quickLinks.map((link) => (
+              {QUICK_LINKS.map((link) => (
                 <li key={link.name}>
                   <a href={link.href} className={s.quickLink}>
                     {link.name}
@@ -45,7 +47,7 @@ const Footer = () => {
           <div className={s.footerSection}>
             <h3 className={s.sectionTitle}>Технологии</h3>
             <div className={s.skillTags}>
-              {skills.map((skill) => (
+              {SKILLS.map((skill) => (
                 <span key={skill} className={s.skillTag}>
                   {skill}
                 </span>
